@@ -147,7 +147,12 @@ a.orange:link, a.orange:visited, a.orange:hover {
     float: left;
     margin-left: 5px;
 }
-
+.lf{
+    float: left;
+}
+.rt{
+    float: right;
+}
 .y {
     float: right;
     margin-right:25px;
@@ -874,9 +879,6 @@ a.orange:link, a.orange:visited, a.orange:hover {
 }
 
 .topic-list .num {
-    position: absolute;
-    right: 10px;
-    bottom: 25px;
     width: 26px;
     height: 18px;
     padding: 0 0 0 30px;
@@ -2663,4 +2665,7 @@ a.other_c {
 /*隐藏帖子数*/
 .pg{
     display: none;
+}
+.xg1{
+    margin-left: 10px;
 }
