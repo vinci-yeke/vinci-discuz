@@ -1,0 +1,43 @@
+<!--{template common/header}-->
+<!--<div class="s-daohang s-center">-->
+    <!--<div class="s-width-50 s-float-left fak_a"><a href="javascript:history.go(-1);" class="fa fa-angle-left fa-3x"></a>-->
+    <!--</div>-->
+    <!--<div class="s-center s-daohang-title "><a href="javascript:;">{lang mythread}</a></div>-->
+
+<!--</div>-->
+<!--<div class="s-hide-5"></div>-->
+<!-- main topic-list start -->
+<div class="topic-list">
+    <ul>
+        <!--{if $list}-->
+        <!--{loop $list $thread}-->
+        <li>
+            <!--{if $viewtype == 'reply' || $viewtype == 'postcomment'}-->
+            < href="forum.php?mod=redirect&goto=findpost&ptid=$thread[tid]&pid=$thread[pid]" target="_blank">
+                <!--{else}-->
+                <a href="forum.php?mod=viewthread&tid=$thread[tid]" target="_blank" {if $thread['displayorder'] ==
+                -1}class="grey"{/if}>
+                <!--{/if}-->
+                <!--ÏÔÊ¾Í¼Æ¬
+                <!--{if in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
+                <img src="./template/strong_kx/images/icon_top.png">
+                <!--{elseif $thread['attachment'] == 2}-->
+                <img src="./template/strong_kx/images/icon_tu.png">
+                <!--{/if}-->
+                -->
+
+                $thread[subject]
+            </a>
+            <!--<span class="xg1 xw0">$thread[dateline]</span>-->
+            <span class="num">{$thread[replies]}</span>
+        </li>
+        <!--{/loop}-->
+        <!--{else}-->
+        <li>{lang no_related_posts}</li>
+        <!--{/if}-->
+    </ul>
+    $multi
+</div>
+<!-- main topic-list end -->
+<!--{eval $nofooter = true;}-->
+

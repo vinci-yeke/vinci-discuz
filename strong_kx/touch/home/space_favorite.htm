@@ -1,0 +1,97 @@
+<!--{template common/header}-->
+<!-- header start -->
+    <div  class="s-daohang s-center">
+        <div class="s-width-50 s-float-left fak_a"><a href="home.php?mod=space&uid={$_G[uid]}&do=profile&mycenter=1" class="fa fa-angle-left fa-3x"></a></div>
+        <div class="s-width-50 s-float-right fak_a"><a href="#"></a></div>
+		<div class="s-center s-daohang-title ">
+		<a href="#" id="subname_listid">
+		<!--{if $_GET['type'] == 'forum'}-->
+
+		{lang favforum}
+		<!--{elseif $_GET['type'] == 'thread'}-->
+
+		{lang favthread}
+		<!--{else}-->
+		{echo $lang['wenzhangshoucang'];}
+		<!--{/if}-->
+		&nbsp;<i class="fa fa-angle-down fa-1x"></i>
+		</a></div>
+
+	</div>
+	<div class="s-hide-5"></div>
+
+
+		<!--{if $_GET['type'] == 'forum'}-->
+
+
+	        <div id="subname_list" class="subname_list" style="display:none; position: absolute; top:50px;" >
+				<ul>
+				<li><a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=thread">{lang favthread}</a></li>
+				<li><a href="home.php?mod=space&do=favorite&type=article">{echo $lang['wenzhangshoucang'];}</a></li>
+
+				</ul>
+	        </div>
+
+		<!--{elseif $_GET['type'] == 'thread'}-->
+
+	        <div id="subname_list" class="subname_list"  style="display:none; position: absolute; top:50px;" >
+				<ul>
+				<li><a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=forum">{lang favforum}</a></li>
+				<li><a href="home.php?mod=space&do=favorite&type=article">{echo $lang['wenzhangshoucang'];}</a></li>
+				</ul>
+	        </div>
+
+		<!--{else}-->
+
+	        <div id="subname_list" class="subname_list" style="display:none; position: absolute; top:50px;" >
+				<ul>
+				<li><a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=forum">{lang favforum}</a></li>
+				<li><a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=thread">{lang favthread}</a></li>
+
+				</ul>
+	        </div>
+
+
+		<!--{/if}-->
+<script>
+	    $(document).ready(function(){
+
+    	$("#subname_listid").click(function(){
+   	 	   $("#subname_list").fadeToggle("slow");
+
+   		});
+
+		});
+</script>
+
+<!-- main collectlist start -->
+<!--{if $_GET['type'] == 'forum'}-->
+<div class="coll_list b_radius" >
+	<ul>
+		<!--{if $list}-->
+			<!--{loop $list $k $value}-->
+			<li><a href="$value[url]">$value[title]</a></li>
+			<!--{/loop}-->
+		<!--{else}-->
+		<li>{lang no_favorite_yet}</li>
+		<!--{/if}-->
+
+	</ul>
+</div>
+<!--{else}-->
+<div class="threadlist" >
+	<ul>
+		<!--{if $list}-->
+			<!--{loop $list $k $value}-->
+			<li><a href="$value[url]">$value[title]</a></li>
+			<!--{/loop}-->
+		<!--{else}-->
+		<li>{lang no_favorite_yet}</li>
+		<!--{/if}-->
+	</ul>
+</div>
+<!--{/if}-->
+<!-- main collectlist end -->
+$multi
+<!--{eval $nofooter = true;}-->
+

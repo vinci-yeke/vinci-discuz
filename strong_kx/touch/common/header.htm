@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Cache-control" content="{if $_G['setting']['mobile'][mobilecachetime] > 0}{$_G['setting']['mobile'][mobilecachetime]}{else}no-cache{/if}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="{if !empty($metakeywords)}{echo dhtmlspecialchars($metakeywords)}{/if}" />
+<meta name="description" content="{if !empty($metadescription)}{echo dhtmlspecialchars($metadescription)} {/if},$_G['setting']['bbname']" />
+<title><!--{if !empty($navtitle)}-->$navtitle - <!--{/if}--><!--{if empty($nobbname)}--> $_G['setting']['bbname'] - <!--{/if}--> {lang waptitle} - Powered by Discuz!</title>
+<link rel="stylesheet" href="./template/strong_kx/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="./template/strong_kx/css/comom.css">
+<link rel="stylesheet" href="./template/strong_kx/css/font-awesome.css">
+<script src="./template/strong_kx/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">var STYLEID = '{STYLEID}', STATICURL = '{STATICURL}', IMGDIR = '{IMGDIR}', VERHASH = '{VERHASH}', charset = '{CHARSET}', discuz_uid = '$_G[uid]', cookiepre = '{$_G[config][cookie][cookiepre]}', cookiedomain = '{$_G[config][cookie][cookiedomain]}', cookiepath = '{$_G[config][cookie][cookiepath]}', showusercard = '{$_G[setting][showusercard]}', attackevasive = '{$_G[config][security][attackevasive]}', disallowfloat = '{$_G[setting][disallowfloat]}', creditnotice = '<!--{if $_G['setting']['creditnotice']}-->$_G['setting']['creditnames']<!--{/if}-->', defaultstyle = '$_G[style][defaultextstyle]', REPORTURL = '$_G[currenturl_encode]', SITEURL = '$_G[siteurl]', JSPATH = '$_G[setting][jspath]';</script>
+<script src="{STATICURL}js/mobile/common.js?{VERHASH}" charset="{CHARSET}"></script>
+</head>
+
+<body  id="sb-site" class="bg">
+<!--{hook/global_header_mobile}-->
+<!--{if $strong_set = $_G['cache']['plugin']['strong_kx']}-->
+<!--{eval require_once './source/plugin/strong_kx/strong_g_set.php';}-->
+<!--{/if}-->
+<style>
+.s-daohang,.threadlist_ul ul li a,.index_enter{ background:$tophdcolor;}
+.forumlistnve .forum_fenlei .active {border-color:$tophdcolor;}
+.fandpost h2 {border-color:$tophdcolor;}
+.s-list-b h3{border-color:$tophdcolor;}
+.threadlist .thread_tit a.a {border-color:$tophdcolor;}
+.xiangguantiezi h3 {border-color:$tophdcolor;}
+a:link, a:visited, a:hover {color: $fontcolor;}
+.button2,.button,.btn_login .pn, .btn_register .pn,.btn_pn_blue{ background:$buttoncolor;}
+.masonrytypes .a a {color:$dianjingcolor;}
+a.blue:link, a.blue:visited, a.blue:hover,.s-pt-list p a,.s-sxy ul li a,.s-wztop p a{color:$linkcolor;}
+</style>
+<!--{eval}-->
+    $language = 'language.'.currentlang().'.php';
+    include ("./template/strong_kx/".$language);
+<!--{/eval}-->
+<!--{if $_GET['subop']!='view'}-->
+
+
+<script src="./template/strong_kx/js/nav.js"></script>
+<!--{/if}-->

@@ -1,0 +1,156 @@
+<style>
+    @font-face {
+        /* font-properties */
+        font-family: PingFang-Regular;
+        src:url('./template/strong_kx/fonts/PingFang-Regular.ttf');
+    }
+    @font-face {
+        /* font-properties */
+        font-family: PingFang-Light;
+        src:url('./template/strong_kx/fonts/PingFang-Light.ttf');
+    }
+    @font-face {
+        /* font-properties */
+        font-family: SF-UI-Display-Light;
+        src:url('./template/strong_kx/fonts/SF-UI-Display-Light.otf');
+    }
+    @font-face {
+        /* font-properties */
+        font-family: SF-UI-Display-Medium;
+        src:url('./template/strong_kx/fonts/SF-UI-Display-Medium.otf');
+    }
+    body,html {
+        font: 14px SF-UI-Display-Light,PingFang-Regular,Microsoft YaHei, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        letter-spacing: 1px;
+    }
+    body, ul, ol, li, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset,a {
+        margin: 0;
+        padding: 0;
+    }
+    dd {
+        border-radius:5px;
+        background: #fff !important;
+    }
+
+    /*回复帖子页*/
+    .ntc_body{
+        vertical-align: bottom;
+        position: relative;
+
+    }
+    .ntc_body a:first-child {
+        color: #16141d;
+        text-align: center;
+        font-size: 50px;
+        text-decoration: none;
+    }
+
+    .ntc_body a:first-child {
+        padding: 0 10px;
+        font-weight: bold;
+    }
+
+    .ntc_body a:nth-child(2) {
+        display: block;
+        text-decoration: none;
+        height: 60px;
+        line-height: 60px;
+        color: #84868c;
+        font-size:38px;
+        margin: 30px 0 20px 0;
+        background: #f7f8fa;
+        border-radius: 5px;
+        text-align: left;
+        padding: 12px 14px 12px 40px;
+        /*超出隐藏显示省略号*/
+        overflow:hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+    }
+
+    .ntc_body a:last-child {
+        position: absolute;
+        font-size: 32px;
+        right: 20px;
+        top:30px;
+        text-decoration: none;
+        color: #84868c;
+        text-align: right;
+    }
+    /*回复的时间*/
+    .xg1{
+        text-align: right;
+        font-size: 20px;
+        position: relative;
+        right: -37px;
+        top: 32px;
+    }
+    .lit{
+        display: none;
+    }
+</style>
+<!--{eval $_G['home_tpl_titles'] = array('{lang remind}');}-->
+<div id="ct" class="ct2_a wp cl" style="background: #fff; width: 100%;height:100%;overflow: hidden;">
+    <div class="mn">
+        <div class="bm bw0">
+            <!--{if $view=='userapp'}-->
+            <script type="text/javascript">
+                function manyou_add_userapp(hash, url) {
+                    if (isUndefined(url)) {
+                        $(hash).innerHTML = "<tr><td colspan=\"2\">{lang successfully_ignored_information}</td></tr>";
+                    } else {
+                        $(hash).innerHTML = "<tr><td colspan=\"2\">{lang is_guide_you_in}</td></tr>";
+                    }
+                    var x = new Ajax();
+                    x.get('home.php?mod=misc&ac=ajax&op=deluserapp&hash=' + hash, function (s) {
+                        if (!isUndefined(url)) {
+                            location.href = url;
+                        }
+                    });
+                }
+            </script>
+            <!--{else}-->
+            <!--{if $list}-->
+            <div class="xld xlda">
+                <div class="nts">
+                    <!--{loop $list $key $value}-->
+                    <dl class="cl {if $key==1}bw0{/if} " $value[rowid] notice="$value[id]">
+                        <!--<dd class="m avt mbn">-->
+                        <!--&lt;!&ndash;{if $value[authorid]}&ndash;&gt;-->
+                        <!--<a href="home.php?mod=space&uid=$value[authorid]">&lt;!&ndash;{avatar($value[authorid],small)}&ndash;&gt;</a>-->
+                        <!--&lt;!&ndash;{else}&ndash;&gt;-->
+                        <!--<img src="{IMGDIR}/systempm.png" alt="systempm" />-->
+                        <!--&lt;!&ndash;{/if}&ndash;&gt;-->
+                        <!--</dd>-->
+                        <!--<dt>-->
+                        <!--<a class="d b" href="home.php?mod=spacecp&ac=common&op=ignore&authorid=$value[authorid]&type=$value[type]&handlekey=addfriendhk_{$value[authorid]}" id="a_note_$value[id]" onclick="showWindow(this.id, this.href, 'get', 0);" title="{lang shield}">{lang shield}</a>-->
+
+                        <!--</dt>-->
+
+                        <dd class="ntc_body"
+                            style=" width: 90%;background: #ddd;padding: 20px;font-size:2em;margin-top: 50px">
+                            $value[note]
+                            <a class="xg1 xw0"><!--{date($value[dateline], 'u')}--></a>
+                        </dd>
+                        <dd>
+                        </dd>
+                        <!--{if $value[from_num]}-->
+                        <dd class="xg1 xw0">{lang ignore_same_notice_message}</dd>
+                        <!--{/if}-->
+
+                    </dl>
+                    <!--{/loop}-->
+                </div>
+            </div>
+            <!--{if $multi}-->
+            <div class="pgs cl">$multi</div>
+            <!--{/if}-->
+            <!--{/if}-->
+            <!--{/if}-->
+        </div>
+    </div>
+</div>
+

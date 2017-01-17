@@ -1,0 +1,83 @@
+@charset "utf-8";
+.circle a, .circle a:hover, .circle a:visited, .circle a:link, ring a, ring a:hover, ring a:visited {
+    color: #fff;
+}
+
+.circle {
+    position: fixed;
+    bottom: 70px;
+    left: 20px;
+    z-index: 999;
+}
+
+.circle {
+    margin: 0 auto;
+}
+
+.ring {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 90px;
+    opacity: 0;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: scale(0.1) rotate(-270deg);
+    -moz-transform: scale(0.1) rotate(-270deg);
+    -transform: scale(0.1) rotate(-270deg);
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s ease-out;
+    transition: all .4s ease-out;
+}
+
+.open {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999;
+}
+
+.open .ring {
+    opacity: 1;
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -transform: scale(1) rotate(0);
+    height: 180px;
+    width: 180px;
+}
+
+.center {
+    background-color: rgba(242, 148, 14, 0.9);
+    border-radius: 28px;
+    border: 3px solid #fff;
+    bottom: 0;
+    color: white;
+    height: 50px;
+    left: 0;
+    line-height: 50px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 50px;
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s ease-out;
+    transition: all .4s ease-out;
+}
+
+.open .center {
+    border-color: #fff;
+}
+
+.menuItem {
+    border-radius: 20px;
+    color: #eee;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    margin-left: -20px;
+    margin-top: -20px;
+    position: absolute;
+    text-align: center;
+    width: 40px;
+}
