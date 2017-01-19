@@ -23,7 +23,7 @@ $('.load_more').on('click', function () {
         console.log('123');
     } else {
         var timer = setTimeout(function () {
-            var p_next = $('.page a:last').getAttribute('href');
+            var p_next = $('.page a:last').attr('href');
             console.log(p_next);
             var page = $(".page a").find('#dumppage >option:last').val();
             console.log(page);

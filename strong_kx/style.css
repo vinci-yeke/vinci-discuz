@@ -142,7 +142,9 @@ a.orange:link, a.orange:visited, a.orange:hover {
     color: #F60;
     text-decoration: none
 }
-
+a:link, a:visited, a:hover{
+    color:#fff;
+}
 .z {
     float: left;
     margin-left: 5px;
@@ -856,9 +858,9 @@ a.orange:link, a.orange:visited, a.orange:hover {
     width: 200px;
     font-weight: bold;
     margin: 0 10px;
-    padding: 20px 0;
+    padding: 20px 0 14px 0;
     line-height: 25px;
-    color: #16181d;
+    color: #16181d !important;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -959,7 +961,7 @@ a.orange:link, a.orange:visited, a.orange:hover {
     position: fixed;
     right: 8%;
     bottom: 8%;
-    color: #fff;
+    color: #fff !important;
     font-size: 16px;
     text-align: center;
     line-height: 58px;
@@ -973,7 +975,7 @@ a.orange:link, a.orange:visited, a.orange:hover {
 }
 
 .btn_pn_reply a {
-    color: #fff;
+    color: #fff !important;
 }
 
 .reply_btn {
@@ -1016,7 +1018,7 @@ a.orange:link, a.orange:visited, a.orange:hover {
     border: 0;
     width: 100%;
     background: none;
-    margin-top: 18px;
+    margin: 18px 0;
     padding: 0;
     font-size: 14px;
 }
@@ -1031,7 +1033,7 @@ a.orange:link, a.orange:visited, a.orange:hover {
 }
 
 .post_imglist {
-    margin: 15px 25px;
+    margin: 25px 25px 30px 25px;
 }
 
 .post_imglist li {
@@ -1048,6 +1050,8 @@ a.orange:link, a.orange:visited, a.orange:hover {
 }
 
 .post_imglist li .p_img img {
+    width: 108px;
+    height: 81px;
     padding: 2px;
     border: 1px solid #DDD;
 }
@@ -1149,13 +1153,14 @@ a.orange:link, a.orange:visited, a.orange:hover {
     color: #F0F0F0;
 }
 .plc .pi .img_one{
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 48px;
     min-height: 50px;
 }
-.plc .pi .message img, .plc .pi .img_one img {
-    margin: 0px 4px 0px 0;
-    border-radius: 5px;
+.plc .pi .message img, .plc .pi .img_one img,.plc .pi .img_list a img {
+    margin: 0 4px 0 0;
+    width: 80px;
+    height: 60px;
 }
 
 .plc .pi .message .quote {
@@ -1171,7 +1176,7 @@ a.orange:link, a.orange:visited, a.orange:hover {
 
 .plc .pi .img_list li {
     float: left;
-    width: 30%;
+    width: 84px;
     height: auto;
     max-width: 100%;
     margin: 10px 5px 10px 0;
@@ -1761,7 +1766,7 @@ a.other_c {
 }
 .grey .name{
     font-size: 14px;
-    color:#16181d;
+    color:#16181d !important;
 }
 .grey .dateline{
     font:13px SF-UI-Display-Light;
@@ -2030,9 +2035,9 @@ a.other_c {
     margin: 0 26px;
     border-bottom: 1px solid #48494d;
 }
-.massage a{
+p.massage a{
     font:15px PingFang-Regular;
-    color: #fff;
+    color: #fff !important;
 
 }
 .message-box {
@@ -2576,8 +2581,8 @@ a.other_c {
     display: inline-block;
     position: fixed;
     right: 6%;
-    bottom: 8%;
-    color: #fff;
+    bottom: 6%;
+    color: #fff !important;
     font-size: 16px;
     text-align: center;
     line-height: 58px;
@@ -2638,7 +2643,9 @@ a.other_c {
     background-size: 13px 9px;
 }
 .left-hour{
+    width: 130px;
     float: left;
+    text-align: left;
     position: relative;
     left: -34px;
     top: 8px;
@@ -2651,7 +2658,7 @@ a.other_c {
     min-height: 100px;
 }
 .plc:nth-child(4){
-    margin-top: 76px;
+    margin-top: 55px;
 }
 .plc:not(:nth-child(3)){
     border-bottom: 1px solid #e7e7e7;
@@ -2666,6 +2673,13 @@ a.other_c {
 .pg{
     display: none;
 }
-.xg1{
-    margin-left: 10px;
+
+.date2look{
+    padding: 0 0 0 9px;
+}
+.del>a>img{
+    position: relative;
+    left: 85px;
+    top: 73px;
+    width: 54%;
 }
