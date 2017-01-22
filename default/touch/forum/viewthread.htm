@@ -260,11 +260,13 @@ $multipage
     if (first_img) {
         first_img.css('margin-left', '0');
         $('.plc:first .message ').css('margin', '15px 0 10px 0');
-        $('.plc:first .img_one a>img').css({width: '100%', height: '150px'});
+        $('.plc:first .img_one a>img').css({width: '100%', height: 'auto'});
     }
     if (first_list) {
-        first_list.css('margin', '4px 0 4px 40px');
+        first_list.css('margin', '4px 0 4px 0');
         $('.plc:first .message').css('margin', '15px 0 10px 0px');
+        $('.plc:first li').css({width:'100%',height:'auto'});
+        $('.plc:first a>img').css({width: '100%', height: 'auto'});
     }
     var list = $('.rpy-floor');
     for (var i = 0; i < list.length; i++) {

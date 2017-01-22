@@ -1071,8 +1071,9 @@ a:link, a:visited, a:hover{
 }
 
 .postlist h2 {
-    font:18px PingFang-Regular;
+    font:15px PingFang-Regular;
     clear: both;
+    text-align: center;
     margin: 30px 0 25px;
     line-height: 1em;
 }
@@ -1138,7 +1139,7 @@ a:link, a:visited, a:hover{
 .plc .pi .authi li em {
     float: right;
     font-style: normal;
-    margin-right: 20px;
+    
 }
 
 .plc .pi .message {
@@ -1146,6 +1147,7 @@ a:link, a:visited, a:hover{
     font: 14px PingFang-Regular;
     line-height: 23px;
     margin: 45px 0 10px 48px;
+    color: #16181d;
 }
 
 .plc .pi .message .jammer {
@@ -1157,7 +1159,12 @@ a:link, a:visited, a:hover{
     margin-left: 48px;
     min-height: 50px;
 }
-.plc .pi .message img, .plc .pi .img_one img,.plc .pi .img_list a img {
+.plc .pi .message img, .plc .pi .img_one img {
+    margin: 0 4px 0 0;
+    width: 80px;
+    height: 60px;
+}
+.plc .pi .img_list a img{
     margin: 0 4px 0 0;
     width: 80px;
     height: 60px;
@@ -1777,7 +1784,7 @@ a.other_c {
 }
 
 .totalNum {
-    font-size: 13px;
+    font: 13px PingFang-Light;
     display: inline-block;
     margin-bottom: 10px;
     color:#84868c;
@@ -2628,8 +2635,8 @@ p.massage a{
     width: 30px;
     height: 10px;
     text-align: right;
-    padding-right: 15px;
-    background: url('./images/vinci-watch.png') no-repeat 32px 5px;
+    padding-right: 17px;
+    background: url('./images/vinci-watch.png') no-repeat 34px 5px;
     background-size: 13px 5px;
     margin-right: 5px;
 }
@@ -2638,8 +2645,8 @@ p.massage a{
     width:30px;
     height:18px;
     text-align: right;
-    padding-right: 15px;
-    background: url('./images/vinci-discuss.png') no-repeat 32px 3px;
+    padding-right: 17px;
+    background: url('./images/vinci-discuss.png') no-repeat 34px 3px;
     background-size: 13px 9px;
 }
 .left-hour{
@@ -2655,10 +2662,10 @@ p.massage a{
     top: 8px;
 }
 .plc .pi:first-child{
-    min-height: 100px;
+    min-height: 50px;
 }
 .plc:nth-child(4){
-    margin-top: 55px;
+    margin-top: 45px;
 }
 .plc:not(:nth-child(3)){
     border-bottom: 1px solid #e7e7e7;
